@@ -62,17 +62,6 @@ spec:
           title: Jira Component
           type: string
           description: Jira component name; only Trivy issues tagged with this component are shown (often the service name)
-    - title: Java Package
-      required:
-        - javaPackage
-      properties:
-        javaPackage:
-          title: Java Package
-          type: string
-          description: Base Java package for the application, e.g. com.example.myapp
-          default: com.${{ parameters.name }}.app
-          pattern: "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
-          ui:help: Lowercase, dot-separated segments that are valid Java identifiers (no hyphens)
     - title: Choose a location
       required:
         - repoUrl
@@ -96,8 +85,8 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
-          javaPackage: ${{ parameters.javaPackage }}
-          packagePath: ${{ parameters.javaPackage | replace(r/\./g, "/") }}
+          javaPackage: com.${{ parameters.name | lower | replace(r/[^a-z0-9]/g, "") }}.app
+          packagePath: com/${{ parameters.name | lower | replace(r/[^a-z0-9]/g, "") }}/app
           description: ${{ parameters.description }}
           owner: ${{ parameters.owner }}
           system: ${{ parameters.system }}
