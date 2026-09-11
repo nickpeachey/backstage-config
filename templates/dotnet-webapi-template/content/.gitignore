@@ -1,0 +1,14 @@
+## .NET build artifacts
+bin/
+obj/
+out/
+*.user
+*.suo
+
+## Rider / VS
+.idea/
+.vs/
+
+## Environment
+*.env
+appsettings.*.local.json
