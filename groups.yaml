@@ -29,6 +29,7 @@ spec:
     displayName: Frontend Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -42,6 +43,7 @@ spec:
     displayName: Backend Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -55,6 +57,7 @@ spec:
     displayName: DevOps Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -68,6 +71,7 @@ spec:
     displayName: QA Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -81,6 +85,7 @@ spec:
     displayName: Design Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -94,6 +99,7 @@ spec:
     displayName: Database Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -107,3 +113,4 @@ spec:
     displayName: Security Team
     picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
   parent: cawooka
+  children: []
