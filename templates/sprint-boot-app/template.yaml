@@ -21,6 +21,7 @@ spec:
       required:
         - name
         - owner
+        - lifecycle
         - system
         - jiraProjectKey
         - jiraComponent
@@ -35,6 +36,19 @@ spec:
           title: Description
           type: string
           description: Help others understand what this Web API is for
+        lifecycle:
+          title: Lifecycle
+          type: string
+          description: The lifecycle state of the component
+          default: experimental
+          enum:
+            - experimental
+            - production
+            - deprecated
+          enumNames:
+            - Experimental
+            - Production
+            - Deprecated
         owner:
           title: Owner
           type: string
@@ -88,6 +102,7 @@ spec:
           javaPackage: com.${{ parameters.name | lower | replace(r/[^a-z0-9]/g, "") }}.app
           packagePath: com/${{ parameters.name | lower | replace(r/[^a-z0-9]/g, "") }}/app
           description: ${{ parameters.description }}
+          lifecycle: ${{ parameters.lifecycle }}
           owner: ${{ parameters.owner }}
           system: ${{ parameters.system }}
           jiraProjectKey: ${{ parameters.jiraProjectKey }}

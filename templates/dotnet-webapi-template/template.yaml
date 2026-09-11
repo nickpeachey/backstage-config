@@ -21,6 +21,7 @@ spec:
       required:
         - name
         - owner
+        - lifecycle
       properties:
         name:
           title: Name
@@ -32,6 +33,19 @@ spec:
           title: Description
           type: string
           description: Help others understand what this Web API is for
+        lifecycle:
+          title: Lifecycle
+          type: string
+          description: The lifecycle state of the component
+          default: experimental
+          enum:
+            - experimental
+            - production
+            - deprecated
+          enumNames:
+            - Experimental
+            - Production
+            - Deprecated
         owner:
           title: Owner
           type: string
@@ -83,6 +97,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
+          lifecycle: ${{ parameters.lifecycle }}
           owner: ${{ parameters.owner }}
           system: ${{ parameters.system }}
           jiraProjectKey: ${{ parameters.jiraProjectKey }}

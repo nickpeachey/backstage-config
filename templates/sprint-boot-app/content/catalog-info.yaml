@@ -17,7 +17,7 @@ metadata:
 spec:
   type: service
   owner: ${{ values.owner | dump }}
-  lifecycle: experimental
+  lifecycle: ${{ values.lifecycle }}
   {%- if values.system %}
   system: ${{ values.system | dump }}
   {%- endif %}
@@ -34,7 +34,7 @@ metadata:
 spec:
   type: openapi
   owner: ${{ values.owner | dump }}
-  lifecycle: experimental
+  lifecycle: ${{ values.lifecycle }}
   {%- if values.system %}
   system: ${{ values.system | dump }}
   {%- endif %}
