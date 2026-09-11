@@ -1,0 +1,109 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: cawooka
+  description: Cawooka Dev Org
+spec:
+  type: dev-team
+  profile:
+    displayName: Cawooka Dev Org
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  children:
+    - Frontend
+    - Backend
+    - DevOps
+    - QA
+    - Design
+    - Database
+    - Security
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: frontend
+  description: Frontend Team
+spec:
+  type: dev-team
+  profile:
+    displayName: Frontend Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: backend
+  description: Backend Team
+spec:
+  type: dev-team
+  profile:
+    displayName: Backend Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops
+  description: DevOps Team
+spec:
+  type: dev-team
+  profile:
+    displayName: DevOps Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: qa
+  description: QA Team
+spec:
+  type: dev-team
+  profile:
+    displayName: QA Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: design
+  description: Design Team
+spec:
+  type: dev-team
+  profile:
+    displayName: Design Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: database
+  description: Database Team
+spec:
+  type: dev-team
+  profile:
+    displayName: Database Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: security
+  description: Security Team
+spec:
+  type: dev-team
+  profile:
+    displayName: Security Team
+    picture: https://github.com/nickpeachey/backstage-config/images/cawooka.svg
+  parent: cawooka
