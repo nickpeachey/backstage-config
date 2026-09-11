@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: products
+  description: Products Domain
+spec:
+  owner: products
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: search
+  description: Search Domain
+spec:
+  owner: search

@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: customer-portal
+  description: Customer Portal System
+spec:
+  owner: cawooka
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: search
+  description: Search System
+spec:
+  owner: search
