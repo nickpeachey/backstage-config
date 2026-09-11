@@ -42,10 +42,20 @@ spec:
             - experimental
             - production
             - deprecated
+            - testApplication
+            - automation
+            - library
+            - plugin
+            - Design
           enumNames:
             - Experimental
             - Production
             - Deprecated
+            - Test Application
+            - Automation
+            - Library
+            - Plugin
+            - Design
         owner:
           title: Owner
           type: string
