@@ -37,7 +37,7 @@ spec:
           title: Java Package
           type: string
           description: Base Java package for the application, e.g. com.example.myapp
-          default: com.example.app
+          default: com.${{ parameters.name }}.app
           pattern: "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
           ui:help: Lowercase, dot-separated segments that are valid Java identifiers (no hyphens)
         owner:
