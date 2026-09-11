@@ -40,15 +40,9 @@ spec:
           title: Lifecycle
           type: string
           description: The lifecycle state of the component
-          default: experimental
-          enum:
-            - experimental
-            - production
-            - deprecated
-          enumNames:
-            - Experimental
-            - Production
-            - Deprecated
+          # Options are defined centrally in app-config.yaml (scaffolder.lifecycleOptions)
+          # and rendered by the LifecyclePicker custom field.
+          ui:field: LifecyclePicker
         owner:
           title: Owner
           type: string
