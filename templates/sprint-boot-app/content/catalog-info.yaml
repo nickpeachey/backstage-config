@@ -1,0 +1,42 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  {%- if values.description %}
+  description: ${{ values.description | dump }}
+  {%- endif %}
+  annotations:
+    github.com/project-slug: ${{ values.destination.owner + "/" + values.destination.repo }}
+    {%- if values.jiraProjectKey %}
+    jira/project-key: ${{ values.jiraProjectKey }}
+    {%- if values.jiraComponent %}
+    jira/component: ${{ values.jiraComponent }}
+    {%- endif %}
+    jira/all-issues-jql: ${{ ('project = "' + values.jiraProjectKey + '"' + (' AND component = "' + values.jiraComponent + '"' if values.jiraComponent else '') + ' AND labels = "trivy" AND status != "Done"') | dump }}
+    {%- endif %}
+spec:
+  type: service
+  owner: ${{ values.owner | dump }}
+  lifecycle: experimental
+  {%- if values.system %}
+  system: ${{ values.system | dump }}
+  {%- endif %}
+  providesApis:
+    - ${{ values.name }}-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ${{ (values.name + "-api") | dump }}
+  {%- if values.description %}
+  description: ${{ values.description | dump }}
+  {%- endif %}
+spec:
+  type: openapi
+  owner: ${{ values.owner | dump }}
+  lifecycle: experimental
+  {%- if values.system %}
+  system: ${{ values.system | dump }}
+  {%- endif %}
+  definition:
+    $text: ./openapi.yaml

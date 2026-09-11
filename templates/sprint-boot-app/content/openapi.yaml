@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: ${{ values.name }}
+  description: ${{ values.description if values.description else "A Spring Boot 4 Web API scaffolded from a Backstage template." }}
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+paths:
+  /weatherforecast:
+    get:
+      summary: Get a 5-day weather forecast
+      operationId: getWeatherForecast
+      responses:
+        "200":
+          description: A list of daily forecasts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WeatherForecast"
+components:
+  schemas:
+    WeatherForecast:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        temperatureC:
+          type: integer
+        temperatureF:
+          type: integer
+        summary:
+          type: string

@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: templates
+  description: Aggregates all software templates from their individual folders.
+spec:
+  type: url
+  targets:
+    - ./dotnet-webapi-template/template.yaml
+    - ./sprint-boot-app/template.yaml
